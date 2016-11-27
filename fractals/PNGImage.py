@@ -16,9 +16,9 @@ class PNGImage:
                 (point[1] - self.origin[1])*self.psize[1]/self.size[1])
 
     def setPixelbyPosition(self, x, y, col=(255, 255, 128)):
-        xp, yp = im.toPixel((x, y))
-        if 0 <= xp < size and 0 <= yp < size:
-            im.pixels[xp, yp] = col
+        xp, yp = self.toPixel((x, y))
+        if 0 <= xp < self.psize[0] and 0 <= yp < self.psize[1]:
+            self.pixels[xp, yp] = col
 
 
 
